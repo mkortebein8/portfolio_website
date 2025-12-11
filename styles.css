@@ -308,7 +308,7 @@ body {
   to { transform: scaleY(1); }
 }
 @keyframes typing {
-  from { width: 0; }
+  from { width: fit-content; }
   to { width: 100%; }
 }
 @keyframes blink { 50% { border-color: transparent; } }
