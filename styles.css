@@ -315,7 +315,26 @@ body {
 
 /* ====== ACCESSIBILITY: Reduced Motion ====== */
 @media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-  html { scroll-behavior: auto; }
-  .section { opacity: 1; transform: none; }
+  /* 1. Stop all spinning/sliding animations globally */
+  * { 
+    animation: none !important; 
+    transition: none !important; 
+  }
+  
+  html { 
+    scroll-behavior: auto; 
+  }
+  
+  /* 2. FIX FOR SECTIONS: Force them to be visible immediately without waiting for scroll */
+  .section { 
+    opacity: 1 !important; 
+    transform: none !important; 
+  }
+
+  /* 3. FIX FOR MISSING HEADER: Force the typing text to appear immediately */
+  .hero h1.typing {
+    opacity: 1 !important; 
+    transform: none !important;
+    animation: none !important;
+  }
 }
